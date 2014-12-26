@@ -2,7 +2,7 @@ package org.reality.main;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import org.reality.main.human.Human;
+import org.reality.main.block.BlockRegister;
 
 @Mod(modid = ModInfo.modID, name = ModInfo.name, version = ModInfo.version)
 public class Reality
@@ -13,6 +13,6 @@ public class Reality
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        Human.register();
+        BlockRegister.register();
     }
 }
