@@ -37,7 +37,10 @@ public class Element
     public static final Element manganese   = new Element(25, "Mn", "Maganese", ElementType.SOLID);
     public static final Element iron        = new Element(26, "Fe", "Iron", ElementType.SOLID);
     public static final Element cobalt      = new Element(27, "Co", "Cobalt", ElementType.SOLID);
-
+    public static final Element nickel      = new Element(28, "Ni", "Nickel", ElementType.SOLID);
+    public static final Element copper      = new Element(29, "Cu", "Copper", ElementType.SOLID);
+    public static final Element zinc        = new Element(30, "Zn", "Zinc", ElementType.SOLID);
+    public static final Element gallium     = new Element(31, "Ga", "Gallium", ElementType.LIQUID);
 
     public static final Element gold        = new Element(79, "Au", "Gold", ElementType.SOLID);
 

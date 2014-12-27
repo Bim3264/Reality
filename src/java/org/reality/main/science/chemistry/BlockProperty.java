@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class BlockProperty
 {
-    public static HashMap<Block, Element[]> blockProperties = new HashMap<Block, Element[]>();
+    private static HashMap<Block, Element[]> blockProperties = new HashMap<Block, Element[]>();
 
     public static void setBlockProperties(Block block, Element[] elements)
     {
