@@ -5,6 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IChatComponent;
 
 /**
  * Created by Biw on 26/12/2557.
@@ -72,18 +73,6 @@ public class TileEntityFusionReactor extends TileEntity implements IInventory
     }
 
     @Override
-    public String getInventoryName()
-    {
-        return "FusionReactor";
-    }
-
-    @Override
-    public boolean hasCustomInventoryName()
-    {
-        return false;
-    }
-
-    @Override
     public int getInventoryStackLimit()
     {
         return 64;
@@ -92,14 +81,14 @@ public class TileEntityFusionReactor extends TileEntity implements IInventory
     @Override
     public boolean isUseableByPlayer(EntityPlayer entityPlayer)
     {
-        return entityPlayer.getDistanceSq(xCoord + 0.5, yCoord + 0.5, zCoord + 0.5) <= 64;
+        return entityPlayer.getDistanceSq(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5) <= 64;
     }
 
     @Override
-    public void openInventory() {}
+    public void openInventory(EntityPlayer entityPlayer) {}
 
     @Override
-    public void closeInventory() {}
+    public void closeInventory(EntityPlayer entityPlayer) {}
 
     @Override
     public boolean isItemValidForSlot(int i, ItemStack itemStack)
@@ -107,4 +96,38 @@ public class TileEntityFusionReactor extends TileEntity implements IInventory
         return itemStack.getItem() == Items.iron_ingot || itemStack.getItem() == Items.gold_ingot;
     }
 
+    @Override
+    public int getField(int i) {
+        return 0;
+    }
+
+    @Override
+    public void setField(int i, int i1) {
+
+    }
+
+    @Override
+    public int getFieldCount() {
+        return 0;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public String getName() {
+        return "FusionReactor";
+    }
+
+    @Override
+    public boolean hasCustomName() {
+        return false;
+    }
+
+    @Override
+    public IChatComponent getDisplayName() {
+        return null;
+    }
 }

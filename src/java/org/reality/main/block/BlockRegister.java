@@ -1,7 +1,7 @@
 package org.reality.main.block;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.reality.main.science.chemistry.Element;
 import org.reality.main.tileentity.TileEntityFusionReactor;
 

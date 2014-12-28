@@ -3,7 +3,6 @@ package org.reality.main.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import org.reality.main.ModInfo;
 import org.reality.main.science.chemistry.BlockProperty;
 import org.reality.main.science.chemistry.Element;
 
@@ -12,12 +11,11 @@ import org.reality.main.science.chemistry.Element;
  */
 public class ModBlock extends Block
 {
-    public ModBlock(String blockname)
+    public ModBlock(String unlocalizedname)
     {
         super(Material.rock);
         this.setCreativeTab(CreativeTabs.tabBlock);
-        this.setBlockName(blockname);
-        this.setBlockTextureName(ModInfo.modID + ":" + this.getUnlocalizedName());
+        this.setUnlocalizedName(unlocalizedname);
     }
 
     public ModBlock setProperties(Element[] properties)

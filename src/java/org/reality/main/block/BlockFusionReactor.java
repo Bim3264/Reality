@@ -12,10 +12,10 @@ import org.reality.main.tileentity.TileEntityFusionReactor;
  */
 public class BlockFusionReactor extends BlockContainer
 {
-    protected BlockFusionReactor(String blockname)
+    protected BlockFusionReactor(String unlocalizedname)
     {
         super(Material.rock);
-        this.setBlockName(blockname);
+        this.setUnlocalizedName(unlocalizedname);
         this.setCreativeTab(CreativeTabs.tabBlock);
     }
 
