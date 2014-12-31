@@ -1,7 +1,7 @@
 package org.reality.main;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import org.reality.main.block.BlockRegister;
 import org.reality.main.item.ItemRegister;
 
