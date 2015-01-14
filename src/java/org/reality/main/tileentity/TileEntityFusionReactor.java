@@ -11,12 +11,17 @@ import net.minecraft.tileentity.TileEntity;
  */
 public class TileEntityFusionReactor extends TileEntity implements IInventory
 {
-
     ItemStack[] items;
+    String localizedName;
 
     public TileEntityFusionReactor()
     {
         items = new ItemStack[1];
+    }
+
+    public void setGuiDisplayName(String name)
+    {
+        this.localizedName = name;
     }
 
     @Override

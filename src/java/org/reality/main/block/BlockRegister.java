@@ -2,6 +2,7 @@ package org.reality.main.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import org.reality.main.Config;
 import org.reality.main.science.chemistry.Element;
 import org.reality.main.tileentity.TileEntityFusionReactor;
 
@@ -19,13 +20,13 @@ public class BlockRegister
 
     public static void register()
     {
-        pureIron = new ModBlock("block_pure_iron").setProperties(new Element[] {Element.iron});
-        pureGold = new ModBlock("block_pure_gold").setProperties(new Element[] {Element.gold});
-        fusion_reactor = new BlockFusionReactor("block_fusion_reactor");
+        pureIron = new ModBlock(Config.namePureIron).setProperties(new Element[] {Element.iron});
+        pureGold = new ModBlock(Config.namePureGold).setProperties(new Element[] {Element.gold});
+        fusion_reactor = new BlockFusionReactor(Config.nameFusionReactor);
 
-        GameRegistry.registerBlock(pureIron, "block_pure_iron");
-        GameRegistry.registerBlock(pureGold, "block_pure_gold");
-        GameRegistry.registerBlock(fusion_reactor, "block_fusion_reactor");
+        GameRegistry.registerBlock(pureIron, Config.namePureIron);
+        GameRegistry.registerBlock(pureGold, Config.namePureGold);
+        GameRegistry.registerBlock(fusion_reactor, Config.nameFusionReactor);
 
         GameRegistry.registerTileEntity(TileEntityFusionReactor.class, "tile_entity_fusion_reactor");
     }

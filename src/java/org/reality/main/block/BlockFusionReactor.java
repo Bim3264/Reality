@@ -10,11 +10,10 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import org.reality.main.ModInfo;
+import org.reality.main.Config;
 import org.reality.main.tileentity.TileEntityFusionReactor;
 
 /**
@@ -23,7 +22,13 @@ import org.reality.main.tileentity.TileEntityFusionReactor;
 public class BlockFusionReactor extends BlockContainer
 {
     @SideOnly(Side.CLIENT)
-    private IIcon fusion_facing;
+    private IIcon top;
+    @SideOnly(Side.CLIENT)
+    private IIcon bottom;
+    @SideOnly(Side.CLIENT)
+    private IIcon front;
+    @SideOnly(Side.CLIENT)
+    private IIcon back;
 
     protected BlockFusionReactor(String blockname)
     {
@@ -81,14 +86,44 @@ public class BlockFusionReactor extends BlockContainer
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta)
     {
-        return side == 1 ? this.blockIcon : (side == 0 ? this.blockIcon : (side != meta ? this.blockIcon : this.fusion_facing));
+        int back = 2;
+//        return side == 1 ? this.top : (side == 0 ? this.bottom : (side == 2  || side == 3 ? this.blockIcon : (side == 5 ? this.back : this.back )));
+        if (meta == 2)
+            back = 3;
+        if (meta == 3)
+            back = 2;
+        if (meta == 4)
+            back = 5;
+        if (meta == 5)
+            back = 4;
+
+        if (side == meta)
+        {
+            return this.front;
+        }
+        if (side == 1)
+        {
+            return this.top;
+        }
+        if (side == 0)
+        {
+            return this.bottom;
+        }
+        if (side == back)
+        {
+            return this.back;
+        }
+        return this.blockIcon;
     }
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister iconRegister)
     {
-        this.blockIcon = iconRegister.registerIcon(ModInfo.modID + ":" + "tile.block_fusion_reactor_normal");
-        this.fusion_facing = iconRegister.registerIcon(ModInfo.modID + ":" + "tile.block_fusion_reactor_facing");
+        this.blockIcon = iconRegister.registerIcon(Config.modID + ":" + "block_fusion_reactor_L_R_sides");
+        this.top = iconRegister.registerIcon(Config.modID + ":" + "block_fusion_reactor_top");
+        this.bottom = iconRegister.registerIcon(Config.modID + ":" + "block_fusion_reactor_bottom");
+        this.front = iconRegister.registerIcon(Config.modID + ":" + "block_fusion_reactor_front");
+        this.back = iconRegister.registerIcon(Config.modID + ":" + "block_fusion_reactor_back");
     }
 
     public void onBlockPlacedBy(World p_149689_1_, int p_149689_2_, int p_149689_3_, int p_149689_4_, EntityLivingBase p_149689_5_, ItemStack p_149689_6_)
@@ -117,7 +152,7 @@ public class BlockFusionReactor extends BlockContainer
 
         if (p_149689_6_.hasDisplayName())
         {
-            ((TileEntityFurnace)p_149689_1_.getTileEntity(p_149689_2_, p_149689_3_, p_149689_4_)).func_145951_a(p_149689_6_.getDisplayName());
+            ((TileEntityFusionReactor)p_149689_1_.getTileEntity(p_149689_2_, p_149689_3_, p_149689_4_)).setGuiDisplayName(p_149689_6_.getDisplayName());
         }
     }
 }

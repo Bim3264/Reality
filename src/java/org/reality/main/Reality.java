@@ -5,10 +5,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import org.reality.main.block.BlockRegister;
 import org.reality.main.item.ItemRegister;
 
-@Mod(modid = ModInfo.modID, name = ModInfo.name, version = ModInfo.version)
+@Mod(modid = Config.modID, name = Config.name, version = Config.version)
 public class Reality
 {
-    @Mod.Instance(ModInfo.modID)
+    @Mod.Instance(Config.modID)
     public static Reality instance;
 
     @Mod.EventHandler
