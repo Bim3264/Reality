@@ -26,7 +26,7 @@ public class ItemBinder extends ModItem
         {
             return false;
         }
-
+//        if (world.getBlock(x, y, z))
         if (firstPosition == false)
         {
             nbtTagCompound.setFloat("startX", x);

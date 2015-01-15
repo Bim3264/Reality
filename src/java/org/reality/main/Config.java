@@ -12,4 +12,13 @@ public class Config
     public static final String namePureIron = "block_pure_iron";
     public static final String namePureGold = "block_pure_gold";
     public static final String nameFusionReactor = "block_fusion_reactor";
+
+    public static final String nameBinder = "item_binder";
+    public static final String namePowerPedestal = "item_power_pedestal";
+
+    public static final String nameTEFusionReactor = "tile_entity_fusion_reactor";
+    public static final String nameTEPowerPedestal = "tile_entity_power_pedestal";
+
+    public static final String oreDictIronBlock = "blockIron";
+    public static final String oreDictGoldBlock = "blockGold";
 }
