@@ -1,5 +1,2 @@
-tile.block_pure_iron.name=Pure Metal [Iron]
-tile.block_pure_gold.name=Pure Metal [Gold]
-tile.block_fusion_reactor.name=Fusion Reactor
-
-item.item_binder.name=Binder
+tile.ore_aluminium.name=AluminiumOre
+item.item_aluminum.name=Aluminum
