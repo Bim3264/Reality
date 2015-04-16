@@ -22,11 +22,11 @@ public class Element
 
     public void addSpecialRules(SpecialRules... specialRules) {}
 
-    public void addToArrayIfNotExist(Element element)
+    public void addToArrayIfNotExist(int index, Element element)
     {
         if (!elements.contains(element))
         {
-            elements.add(element);
+            elements.add(index, element);
         }
     }
 

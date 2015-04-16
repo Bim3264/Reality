@@ -21,7 +21,7 @@ public class ElementSolid extends Element
         super(id, symbol, name);
 
         this.generateNeededStuff(name);
-        this.addToArrayIfNotExist(this);
+        this.addToArrayIfNotExist(id, this);
     }
 
     public void generateNeededStuff(String name)

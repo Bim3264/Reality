@@ -18,6 +18,7 @@ public class ElementLiquid extends Element
     {
         super(id, symbol, name);
         doStuff(name);
+        this.addToArrayIfNotExist(id, this);
     }
 
     public void doStuff(String name)

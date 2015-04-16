@@ -8,5 +8,6 @@ public class ElementGas extends Element
     public ElementGas(int id, String symbol, String name)
     {
         super(id, symbol, name);
+        this.addToArrayIfNotExist(id, this);
     }
 }
