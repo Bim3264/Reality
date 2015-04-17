@@ -3,6 +3,7 @@ package org.reality.science.chemistry.element;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import org.reality.block.BlockChemOre;
 import org.reality.item.ItemChem;
 
@@ -40,12 +41,12 @@ public class ElementSolid extends Element
             item = new ItemChem("item_" + name.toLowerCase() + "_ingot", this);
         }
 
-        GameRegistry.registerBlock(block, "ore_" + name);
+        GameRegistry.registerBlock(block,"ore_" + name);
         GameRegistry.registerItem(item, "item_" + name);
     }
 
     @Override
-    public void addSpecialRules(SpecialRules... specialRules)
+    public Element addSpecialRules(SpecialRules... specialRules)
     {
         for (int i = 0; i < specialRules.length; i++)
         {
@@ -60,5 +61,16 @@ public class ElementSolid extends Element
                 this.normalIngot = true;
             }
         }
+        return this;
+    }
+
+    public Block getBlock()
+    {
+        return this.block;
+    }
+
+    public Item getItem()
+    {
+        return this.item;
     }
 }

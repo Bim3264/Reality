@@ -13,20 +13,19 @@ import java.util.List;
  */
 public class ItemChem extends Item
 {
-    public String unlocalizedName;
     private Element element;
 
-    public ItemChem(String unlocalizedName, Element element)
+    public ItemChem(String textureName, Element element)
     {
         this.setCreativeTab(Reality.realityChemistry);
-        this.unlocalizedName = unlocalizedName;
-        this.setUnlocalizedName(this.unlocalizedName);
+        this.setUnlocalizedName("itemChem");
+        this.setTextureName(textureName);
         this.element = element;
     }
 
     @Override
     public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_, List p_77624_3_, boolean p_77624_4_)
     {
-        p_77624_3_.add(element.getSymbol());
+        p_77624_3_.add(element.getName());
     }
 }

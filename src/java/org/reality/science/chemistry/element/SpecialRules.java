@@ -5,5 +5,5 @@ package org.reality.science.chemistry.element;
  */
 public enum SpecialRules
 {
-    DOES_NOT_HAVE_ORE, HAVE_INGOT
+    DOES_NOT_HAVE_ORE, HAVE_INGOT, METAL
 }

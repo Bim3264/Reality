@@ -21,7 +21,7 @@ public class Element
 //        elements.ensureCapacity(118);
     }
 
-    public void addSpecialRules(SpecialRules... specialRules) {}
+    public Element addSpecialRules(SpecialRules... specialRules) {return this;}
 
     public void addToArrayIfNotExist(int index, Element element)
     {

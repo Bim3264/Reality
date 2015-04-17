@@ -1,2 +1,6 @@
 tile.ore_aluminium.name=AluminiumOre
-item.item_aluminum.name=Aluminum
+
+item.itemChem.name=Chemistry Item
+
+itemGroup.tabReality_Chemistry=Reality Chemistry
+itemGroup.tabReality_WorldGen=Reality WorldGen
