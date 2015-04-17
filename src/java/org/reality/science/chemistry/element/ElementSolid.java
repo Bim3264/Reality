@@ -33,11 +33,11 @@ public class ElementSolid extends Element
 
         if (normalIngot == false)
         {
-            item = new ItemChem("item_" + name.toLowerCase());
+            item = new ItemChem("item_" + name.toLowerCase(), this);
         }
         else
         {
-            item = new ItemChem("item_" + name.toLowerCase() + "_ingot");
+            item = new ItemChem("item_" + name.toLowerCase() + "_ingot", this);
         }
 
         GameRegistry.registerBlock(block, "ore_" + name);

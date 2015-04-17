@@ -19,16 +19,18 @@ public class ElementLiquid extends Element
         super(id, symbol, name);
         doStuff(name);
         this.addToArrayIfNotExist(id, this);
+
     }
 
+    //TODO: Fix bugs
     public void doStuff(String name)
     {
-        fluid = new Fluid("fluid_" + name.toLowerCase());
-        fluid.setUnlocalizedName("fluid_" + name.toLowerCase());
+//        fluid = new Fluid("fluid_" + name.toLowerCase());
+//        fluid.setUnlocalizedName("fluid_" + name.toLowerCase());
 
-        block = new BlockChemFluid(fluid, "blockfluid_" + name.toLowerCase());
-
-        FluidRegistry.registerFluid(fluid);
-        GameRegistry.registerBlock(block, name.toLowerCase());
+//        block = new BlockChemFluid(fluid, "blockfluid_" + name.toLowerCase());
+//
+//        FluidRegistry.registerFluid(fluid);
+//        GameRegistry.registerBlock(block, name.toLowerCase());
     }
 }

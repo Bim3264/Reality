@@ -7,7 +7,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import org.reality.science.chemistry.element.Elements;
-import org.reality.util.LangWriter;
 
 @Mod(modid = Config.modID, name = Config.name, version = Config.version)
 public class Reality
@@ -27,7 +26,16 @@ public class Reality
         new Elements();
     }
 
-    public static CreativeTabs realityCreativeTab = new CreativeTabs("tabReality")
+    public static CreativeTabs realityChemistry = new CreativeTabs("tabReality_Chemistry")
+    {
+        @Override
+        public Item getTabIconItem()
+        {
+            return Item.getItemFromBlock(Blocks.stone);
+        }
+    };
+
+    public static CreativeTabs realityWorldGen = new CreativeTabs("tabReality_WorldGen")
     {
         @Override
         public Item getTabIconItem()

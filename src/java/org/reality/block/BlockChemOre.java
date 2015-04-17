@@ -19,6 +19,6 @@ public class BlockChemOre extends Block
         this.unlocalizedName = unlocalizedName;
         this.setBlockName(this.unlocalizedName);
         this.setBlockTextureName(Config.modID + ":" + this.unlocalizedName);
-        this.setCreativeTab(Reality.realityCreativeTab);
+        this.setCreativeTab(Reality.realityWorldGen);
     }
 }
