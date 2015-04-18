@@ -2,10 +2,14 @@ package org.reality.main;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
+import org.reality.renderer.BottleGui;
 import org.reality.science.chemistry.element.Elements;
 
 @Mod(modid = Config.modID, name = Config.name, version = Config.version)
@@ -17,13 +21,19 @@ public class Reality
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-
+        new Elements();
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        new Elements();
+
+    }
+
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+        MinecraftForge.EVENT_BUS.register(new BottleGui(Minecraft.getMinecraft()));
     }
 
     public static CreativeTabs realityChemistry = new CreativeTabs("tabReality_Chemistry")

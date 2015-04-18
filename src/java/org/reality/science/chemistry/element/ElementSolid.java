@@ -16,6 +16,7 @@ public class ElementSolid extends Element
     private Item item;
     private boolean haveOre = true;
     private boolean normalIngot = false;
+    private boolean metal = false;
 
     public ElementSolid(int id, String symbol, String name)
     {
@@ -36,7 +37,7 @@ public class ElementSolid extends Element
         {
             item = new ItemChem("item_" + name.toLowerCase(), this);
         }
-        else
+        else if (metal == true && normalIngot == true)
         {
             item = new ItemChem("item_" + name.toLowerCase() + "_ingot", this);
         }
@@ -59,6 +60,10 @@ public class ElementSolid extends Element
             if (rules == SpecialRules.HAVE_INGOT)
             {
                 this.normalIngot = true;
+            }
+            if (rules == SpecialRules.METAL)
+            {
+                this.metal = true;
             }
         }
         return this;

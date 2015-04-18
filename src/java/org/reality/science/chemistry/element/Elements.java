@@ -122,5 +122,5 @@ public class Elements
     public static final Element ununpentium     = new ElementSolid(115, "Uup", "Ununpentium").addSpecialRules(SpecialRules.METAL);
     public static final Element ununhexium      = new ElementSolid(116, "Uuh", "Ununhexium").addSpecialRules(SpecialRules.METAL);
     public static final Element ununseptium     = new ElementSolid(117, "Uus", "Ununseptium");
-    public static final Element ununoctium     = new ElementSolid(118, "Uuo", "Ununoctium");
+    public static final Element ununoctium      = new ElementSolid(118, "Uuo", "Ununoctium");
 }

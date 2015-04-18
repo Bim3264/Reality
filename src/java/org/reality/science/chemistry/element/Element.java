@@ -11,23 +11,22 @@ public class Element
     public String symbol;
     public String name;
 
-//    public ArrayList<Element> elements = new ArrayList<Element>();
+    public ArrayList<Element> elements = new ArrayList<Element>();
 
     public Element(int id, String symbol, String name)
     {
         this.id = id;
         this.symbol = symbol;
         this.name = name;
-//        elements.ensureCapacity(118);
     }
 
     public Element addSpecialRules(SpecialRules... specialRules) {return this;}
 
     public void addToArrayIfNotExist(int index, Element element)
     {
-//        if (!elements.contains(element))
+       if (!elements.contains(element))
         {
-//            elements.add(index - 1, element);
+           elements.add( element);
         }
     }
 
