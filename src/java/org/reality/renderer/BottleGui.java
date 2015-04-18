@@ -20,7 +20,7 @@ public class BottleGui extends Gui
 {
     private Minecraft mc;
     public Vector2f pos = new Vector2f(0,0);
-    public int percentage = 100;
+    public int percentage = 49;
 
     public BottleGui(Minecraft mc)
     {
@@ -45,7 +45,23 @@ public class BottleGui extends Gui
             this.mc.renderEngine.bindTexture(new ResourceLocation(Config.modID, "textures/gui/thirst_hud.png"));
             this.drawTexturedModalRect((int) pos.x, (int) pos.y, 0, 0, 32, 16);
             this.drawTexturedModalRect((int) pos.x, (int) pos.y, 0, 16, animate(percentage), 16);
-            this.drawString(this.mc.fontRenderer, Integer.toString(percentage) + " %" /** Should be replace with percent*/, (int)pos.x + 2, (int)pos.y + 16, 0xFFFFFF);
+            this.drawString(this.mc.fontRenderer, Integer.toString(percentage) + " %" /** Should be replace with percent*/, (int)pos.x + 2, (int)pos.y + 16, getPercentageColor());
+        }
+    }
+
+    public int getPercentageColor()
+    {
+        if (this.percentage < 70 && this.percentage >= 50)
+        {
+            return 0xFFFF00;
+        }
+        else if (this.percentage < 50)
+        {
+            return 0xFF0000;
+        }
+        else
+        {
+            return 0x00FF00;
         }
     }
 
