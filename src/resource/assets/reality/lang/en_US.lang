@@ -1,6 +1,7 @@
 tile.ore_aluminium.name=AluminiumOre
 
 item.itemChem.name=Chemistry Item
+item.itemChemTube.name=Test Tube
 
 itemGroup.tabReality_Chemistry=Reality Chemistry
 itemGroup.tabReality_WorldGen=Reality WorldGen

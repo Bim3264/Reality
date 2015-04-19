@@ -5,7 +5,7 @@ package org.reality.science.chemistry.element;
  */
 public class Elements
 {
-    public static final Element hydrogen        = new ElementGas(1, "H", "Hydrogen");
+    public static final ElementGas hydrogen        = new ElementGas(1, "H", "Hydrogen");
     public static final Element helium          = new ElementGas(2, "He", "Helium");
     public static final Element lithium         = new ElementSolid(3, "Li", "Lithium").addSpecialRules(SpecialRules.METAL);
     public static final Element beryllium       = new ElementSolid(4, "Be", "Beryllium").addSpecialRules(SpecialRules.METAL);

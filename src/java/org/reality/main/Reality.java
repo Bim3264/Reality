@@ -4,11 +4,14 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
+import org.reality.handler.GuiHandler;
 import org.reality.renderer.BottleGui;
 import org.reality.science.chemistry.element.Elements;
 
@@ -21,7 +24,12 @@ public class Reality
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+        new Blocks();
         new Elements();
+
+        GameRegistry.registerBlock(org.reality.block.Blocks.elementExtractor, "block_element_extractor");
+
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
     }
 
     @Mod.EventHandler
@@ -41,7 +49,7 @@ public class Reality
         @Override
         public Item getTabIconItem()
         {
-            return Item.getItemFromBlock(Blocks.stone);
+            return Elements.hydrogen.getItem();
         }
     };
 

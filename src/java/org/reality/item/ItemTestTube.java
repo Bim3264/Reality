@@ -1,6 +1,5 @@
 package org.reality.item;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,18 +12,19 @@ import java.util.List;
 /**
  * Created by xCoDe7 on 13/4/2558.
  */
-public class ItemChem extends Item
+public class ItemTestTube extends Item
 {
     private Element element;
     private String textureName;
 
-    public ItemChem(String textureName, Element element)
+    public ItemTestTube(String textureName, Element element)
     {
-        this.setCreativeTab(Reality.realityChemistry);
-        this.setUnlocalizedName("itemChem");
-        this.setTextureName(Config.modID + ":" + textureName);
-        this.element = element;
         this.textureName = textureName;
+        this.element = element;
+        this.setCreativeTab(Reality.realityChemistry);
+        this.setUnlocalizedName("itemChemTube");
+        this.setTextureName(Config.modID + ":" + textureName);
+        this.setFull3D();
     }
 
     @Override
@@ -32,5 +32,4 @@ public class ItemChem extends Item
     {
         p_77624_3_.add(element.getName() + "(" + element.getSymbol() + ")");
     }
-
 }

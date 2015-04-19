@@ -12,11 +12,11 @@ import org.reality.item.ItemChem;
  */
 public class ElementSolid extends Element
 {
-    private Block block;
-    private Item item;
+    public Block block;
+    public Item item;
     private boolean haveOre = true;
     private boolean normalIngot = false;
-    private boolean metal = false;
+    private boolean metal = true;
 
     public ElementSolid(int id, String symbol, String name)
     {
@@ -37,7 +37,8 @@ public class ElementSolid extends Element
         {
             item = new ItemChem("item_" + name.toLowerCase(), this);
         }
-        else if (metal == true && normalIngot == true)
+
+        if (metal == true)
         {
             item = new ItemChem("item_" + name.toLowerCase() + "_ingot", this);
         }

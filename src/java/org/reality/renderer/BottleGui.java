@@ -19,8 +19,8 @@ import org.reality.main.Config;
 public class BottleGui extends Gui
 {
     private Minecraft mc;
-    public Vector2f pos = new Vector2f(0,0);
-    public int percentage = 49;
+    private Vector2f pos = new Vector2f(0,0);
+    private static Float percentage = 100F;
 
     public BottleGui(Minecraft mc)
     {
@@ -44,18 +44,18 @@ public class BottleGui extends Gui
 
             this.mc.renderEngine.bindTexture(new ResourceLocation(Config.modID, "textures/gui/thirst_hud.png"));
             this.drawTexturedModalRect((int) pos.x, (int) pos.y, 0, 0, 32, 16);
-            this.drawTexturedModalRect((int) pos.x, (int) pos.y, 0, 16, animate(percentage), 16);
-            this.drawString(this.mc.fontRenderer, Integer.toString(percentage) + " %" /** Should be replace with percent*/, (int)pos.x + 2, (int)pos.y + 16, getPercentageColor());
+            this.drawTexturedModalRect((int) pos.x, (int) pos.y, 0, 16, (int)animate(percentage), 16);
+            this.drawString(this.mc.fontRenderer, Float.toString(percentage) + " %" /** Should be replace with percent*/, (int)pos.x + 2, (int)pos.y + 16, getPercentageColor());
         }
     }
 
     public int getPercentageColor()
     {
-        if (this.percentage < 70 && this.percentage >= 50)
+        if (percentage < 70 && percentage >= 50)
         {
             return 0xFFFF00;
         }
-        else if (this.percentage < 50)
+        else if (percentage < 50)
         {
             return 0xFF0000;
         }
@@ -65,9 +65,9 @@ public class BottleGui extends Gui
         }
     }
 
-    private int animate(int percentage)
+    private float animate(float percentage)
     {
-        int width;
+        float width;
         width = (percentage * 8) / 25;
         return width;
     }
@@ -83,8 +83,13 @@ public class BottleGui extends Gui
     }
 
     //Should be set from thirst api
-    public void setPercentage(int percentage)
+    public static void setPercentage(float percentage)
     {
-        this.percentage = percentage;
+        BottleGui.percentage = percentage;
+    }
+
+    public static void decreasePercentage(float percentage)
+    {
+        BottleGui.percentage -= percentage;
     }
 }
