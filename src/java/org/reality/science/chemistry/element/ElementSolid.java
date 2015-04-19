@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import org.reality.block.BlockChemOre;
 import org.reality.item.ItemChem;
+import org.reality.main.RecipeManager;
 
 /**
  * Created by xCoDe7 on 13/4/2558.
@@ -33,14 +34,15 @@ public class ElementSolid extends Element
             block = new BlockChemOre("ore_" + name.toLowerCase());
         }
 
-        if (normalIngot == false)
-        {
-            item = new ItemChem("item_" + name.toLowerCase(), this);
-        }
+//        if (normalIngot == false)
+//        {
+//            item = new ItemChem("item_" + name.toLowerCase(), this);
+//        }
 
         if (metal == true)
         {
             item = new ItemChem("item_" + name.toLowerCase() + "_ingot", this);
+            RecipeManager.addFurnaceRecipe(block, item);
         }
 
         GameRegistry.registerBlock(block,"ore_" + name);

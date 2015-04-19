@@ -27,6 +27,8 @@ public class Reality
         new Blocks();
         new Elements();
 
+        RecipeManager.register();
+
         GameRegistry.registerBlock(org.reality.block.Blocks.elementExtractor, "block_element_extractor");
 
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
