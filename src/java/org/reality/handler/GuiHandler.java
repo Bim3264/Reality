@@ -4,7 +4,7 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import org.reality.container.ContainerElementExtractor;
+import org.reality.inventory.ContainerElementExtractor;
 import org.reality.gui.GuiElementExtractor;
 import org.reality.tileentity.TileEntityElementExractor;
 

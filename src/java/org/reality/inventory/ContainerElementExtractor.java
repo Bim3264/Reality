@@ -1,4 +1,4 @@
-package org.reality.container;
+package org.reality.inventory;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -26,7 +26,7 @@ public class ContainerElementExtractor extends Container
         tileEntity = te;
 
         addSlotToContainer(new Slot(tileEntity, 0, 52, 23));
-        addSlotToContainer(new Slot(tileEntity, 1, 52, 47));
+        addSlotToContainer(new SlotTestTube(tileEntity, 1, 52, 47));
         addSlotToContainer(new SlotFurnace(inventoryPlayer.player,tileEntity, 2, 110, 36));
 
         bindPlayerInventory(inventoryPlayer);

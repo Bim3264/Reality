@@ -2,8 +2,11 @@ package org.reality.main;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
+import org.reality.item.Items;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -28,10 +31,17 @@ public class RecipeManager
 
             iterator.remove();
         }
+
+        addRecipe(new ItemStack(Items.bottle), new Object[] {"# #", "# #", "###", '#', Blocks.glass});
     }
 
     public static void addFurnaceRecipe(Block block, Item item)
     {
         furnaceRecipes.put(block, item);
+    }
+
+    public static void addRecipe(ItemStack itemStack, Object... recipe)
+    {
+        CraftingManager.getInstance().addRecipe(itemStack, recipe);
     }
 }

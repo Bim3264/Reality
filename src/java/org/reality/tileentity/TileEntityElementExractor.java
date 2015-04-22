@@ -3,6 +3,7 @@ package org.reality.tileentity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import org.reality.item.ItemTestTube;
@@ -124,5 +125,17 @@ public class TileEntityElementExractor extends TileEntityFurnace implements IInv
             return false;
         }
         return false;
+    }
+
+    @Override
+    public void writeToNBT(NBTTagCompound p_145841_1_)
+    {
+
+    }
+
+    @Override
+    public void readFromNBT(NBTTagCompound p_145839_1_)
+    {
+
     }
 }

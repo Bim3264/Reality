@@ -33,4 +33,8 @@ public class ItemChem extends Item
         p_77624_3_.add(element.getName() + "(" + element.getSymbol() + ")");
     }
 
+    public Element getElement()
+    {
+        return this.element;
+    }
 }

@@ -5,7 +5,8 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import org.lwjgl.opengl.GL11;
-import org.reality.container.ContainerElementExtractor;
+import org.reality.inventory.ContainerElementExtractor;
+import org.reality.item.crafting.ElementExtractorRecipe;
 import org.reality.main.Config;
 import org.reality.tileentity.TileEntityElementExractor;
 
@@ -14,6 +15,8 @@ import org.reality.tileentity.TileEntityElementExractor;
  */
 public class GuiElementExtractor extends GuiContainer
 {
+    private static boolean isBurning = true;
+
     public GuiElementExtractor (InventoryPlayer inventoryPlayer, TileEntityElementExractor tileEntity)
     {
         //the container is instanciated and passed to the superclass for handling
@@ -28,6 +31,21 @@ public class GuiElementExtractor extends GuiContainer
         fontRendererObj.drawString("Element Extractor", 8, 6, 4210752);
         //draws "Inventory" or your regional equivalent
         fontRendererObj.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 96 + 2, 4210752);
+
+    }
+
+    private void updateBurnTime()
+    {
+        int x = (width - xSize);
+        int y = (height - ySize);
+
+        if (isBurning == true)
+        {
+            GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+            this.mc.renderEngine.bindTexture(new ResourceLocation(Config.modID, "textures/gui/gui_element_extractor.png"));
+
+            this.drawTexturedModalRect(x + 71, y + 40, 178, 14, ElementExtractorRecipe.instance().updateAnimation(), 6);
+        }
     }
 
     @Override
@@ -39,5 +57,13 @@ public class GuiElementExtractor extends GuiContainer
         int x = (width - xSize) / 2;
         int y = (height - ySize) / 2;
         this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
+
+        updateBurnTime();
+
+    }
+
+    public static void setBurning(boolean isBurning)
+    {
+        GuiElementExtractor.isBurning = isBurning;
     }
 }
